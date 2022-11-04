@@ -24,7 +24,8 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get("/api/whoami", function (req, res) {
-  const ip = req.ip;
+  const ip = (req.ip).slice(7);
+  console.log(ip);
   // console.log(JSON.stringify(req.headers));
   const language = req.headers['accept-language'];
   const software = req.headers['user-agent'];
